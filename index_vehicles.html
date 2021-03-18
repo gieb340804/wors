@@ -1,0 +1,33 @@
+<html>
+        <head>
+                <title>Транспорт</title>
+                <link rel="stylesheet" href="css/style.css">
+        </head>
+        <body>
+                <h1>Транспорт героев Star Wars!</h1>
+                <div class="wars"></div>
+                <script>                      
+                        const api_url = window.location.search.substring(1);
+                        console.log(api_url);
+                      
+                        async function getISS(){
+                                const response = await fetch(api_url);
+                                const data = await response.json();
+                                var name = data.name;
+                                var max_atmosphering_speed = data.max_atmosphering_speed;
+                                var manufacturer = data.manufacturer;
+                                
+                                console.log(name);
+                                        
+                                var roww = document.createElement('wars');
+                                roww.innerHTML = `
+                                <h2>Название: ${name}</h2>
+                                <h2>Максимальная скорость: ${max_atmosphering_speed}</h2>
+                                <h2>Производитель: ${manufacturer}</h2>
+                                `;
+                                document.querySelector('.wars').appendChild(roww);     
+                        }
+                        getISS();
+                </script>
+        </body>
+</html>

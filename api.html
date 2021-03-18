@@ -1,0 +1,57 @@
+<html>
+        <head>
+                <title>api</title>
+                <link rel="stylesheet" href="css/style.css">
+        </head>
+        <body>
+                <h1>Cписок героев Star Wars!</h1>
+                <div class="wars"></div>
+                <script>
+                        const api_url ='https://swapi.dev/api/people/';
+                        async function getISS(){
+                                const response = await fetch(api_url);
+                                const data = await response.json();
+                                var nomer = data.results;
+                                var length = nomer.length;
+                                for(var i = 0; i < length; i++){             
+                                        let text = data.results[i].name;
+                                        let height = data.results[i].height;
+                                        let mass = data.results[i].mass;
+                                        let hair_color = data.results[i].hair_color;
+                                        let skin_color = data.results[i].hair_color;
+                                        let eye_color = data.results[i].hair_color;
+                                        let vehicles = data.results[i].vehicles;                                        
+                                        const api_urll = vehicles;
+                                if(vehicles.length > 0){
+                                var a = 'display:block;';
+                                }else{
+                                var a = 'display:none;';
+                                }
+                                        let row = document.createElement('div');
+                                        row.innerHTML = `
+                                        <h2>Имя: ${text}</h2>
+                                        <h2>Рост: ${height}</h2>
+                                        <h2>Вес: ${mass}</h2>
+                                        <h2>Цвет волос: ${hair_color}</h2>
+                                        <h2>Цвет кожи: ${skin_color}</h2>
+                                        <h2>Цвет глаз: ${eye_color}</h2>
+                                        
+                                        `;
+                                document.querySelector('.wars').appendChild(row);
+                                let leg = vehicles.length;
+                                for(var f = 0; f < leg; f++){
+                                var roww = document.createElement('wars');
+                                let n = f + 1;
+                                roww.innerHTML = `
+                                <a href='index_vehicles.html?${vehicles[f]}' style="${a}">№${n} транспорт</a>
+                                `;
+                                document.querySelector('.wars').appendChild(roww);
+                                }
+
+                                } 
+                        }
+
+                        getISS();
+                </script>
+        </body>
+</html>

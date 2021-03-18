@@ -1,0 +1,40 @@
+body{
+        margin: 0px;
+        padding: 0px;
+}
+.bloc-header{
+        height: 100px;
+        border: 1px solid;
+}
+.bloc-header-one{
+        height: 48px;
+        background-color: #00aa4b;
+        margin: auto;
+}
+.bloc-header-one li{
+        display: inline-block;
+    vertical-align: middle;
+        
+}
+.qwe{
+        display: block;
+       width: 85%;
+        
+}
+.wars{
+        width: 300px;
+        margin: auto;
+        box-shadow: 0 0 15px rgb(81 92 98 / 10%);
+        -webkit-box-shadow: 0 0 15px rgb(81 92 98 / 10%);
+        padding: 10px;
+        border-radius: 12px;
+        text-align: center;
+}
+div{
+        margin-top: 50px;
+        border-top: 1px solid rgb(138, 138, 138);
+}
+h1{
+        color: rgb(182, 6, 6);
+        text-align: center;
+}
